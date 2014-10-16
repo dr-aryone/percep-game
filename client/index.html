@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html style="
+    background-color: whitesmoke;
+">
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.createjs.com/easeljs-0.7.0.min.js"></script>
+    <script src="game.js"></script>
+    <script src="formSubmit.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body onload="game.init();" style="
+    text-align: center;
+">
+    <div style="font-size:2em; line-height: 0;">
+      <div style="display:inline-block;">
+        <p style="font-weight: bold;  margin: 1em 5em;">Targets missed</p>
+        <p id="targetsKilled" style="display:inline-block;color: rgb(41, 255, 0); font-weight: bold; margin: 1em 5em;">0</p>
+      </div>
+        <div style="display:inline-block;">
+            <p style="font-weight: bold; margin: 1em 1em;">Time left</p>
+        <p id="time" style="display:inline-block;color: #000; font-weight: bold; margin: 1em 1em;">30</p>
+      </div>
+      <div style="display:inline-block;">
+        <p style="font-weight: bold; margin: 1em 5em;">Targets hit</p>
+        <p id="targetsMissed" style="display:inline-block;color: red; font-weight: bold;  margin: 1em 5em;">0</p>
+      </div>
+    </div>
+    <canvas id="gameCanvas" width="1000" height="562" style="
+        background-color: #f8f8ff;
+        margin: 0 auto;
+        border-style: solid;
+        border-color: #f0dc82;
+        border-width: 0.5em;
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 12px #f0dc82;
+    ">
+        The game screen
+    </canvas>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Finished!</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="game.submitForm()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
